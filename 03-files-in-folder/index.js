@@ -10,7 +10,7 @@ async function dirInfo() {
     for (const file of files) {
       stat(path.join(path.dirname(filename), "/secret-folder/"+file), (err, stats) => {
         if (!stats.isDirectory()) {
-          stdout.write(file + " - " + path.extname(file) + " - " + stats.size + "b\n");
+          stdout.write(file + " - " + path.extname(file).slice(1) + " - " + stats.size + "b\n");
         }
       });
     }
